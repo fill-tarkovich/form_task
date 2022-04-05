@@ -1,13 +1,130 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(43, 51, 118, 0.949);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 200px;
+  color: white;
+  font: 0.7em sans-serif;
+  margin: 50px 50px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+input,
+textarea,
+select {
+  width: 175px;
+  padding: 5px;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 175px;
+  height: 28px;
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  background-color: rgb(54, 137, 54);
+  border: none;
+  color: white;
+  font-size: 0.85em;
+  border-radius: 5px;
+}
+
+.view {
+  position: relative;
+  width: 90%;
+  height: 250px;
+  background-color: rgba(250, 245, 239, 0.978);
+  margin: 30px 50px;
+  box-shadow: 2px 2px 2px 1px rgb(60, 60, 60);
+}
+
+h2 {
+  color: white;
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+.view div {
+  padding-left: 10%;
+  display: flex;
+}
+
+.view div:not(:last-child) {
+  border-bottom: 1px solid grey;
+  height: 50px;
+}
+
+.view::before {
+  content: "";
+  width: 1.5px;
+  height: 100%;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  position: absolute;
+  top: 0;
+  left: 5%;
+}
+
+.popup_body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup_box {
+  position: relative;
+  width: 40%;
+  height: 240px;
+  margin: 35% auto;
+  background-color: white;
+}
+
+.popup_button {
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+h3 {
+  margin-left: 10%;
+  padding-top: 15px;
+}
+
+.info {
+  width: 80%;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
 }
