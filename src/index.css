@@ -74,6 +74,11 @@ h2 {
   display: flex;
 }
 
+.view p {
+  margin-right: 25px;
+  font-style: italic;
+}
+
 .view div:not(:last-child) {
   border-bottom: 1px solid grey;
   height: 50px;
@@ -103,7 +108,7 @@ h2 {
 .popup_box {
   position: relative;
   width: 40%;
-  height: 240px;
+  height: 340px;
   margin: 35% auto;
   background-color: white;
 }
@@ -123,6 +128,14 @@ h3 {
 .info {
   width: 80%;
   margin: auto;
+}
+
+.info div {
+  display: flex;
+}
+
+.info p {
+  margin-right: 25px;
 }
 
 .hidden {

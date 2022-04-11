@@ -5,29 +5,42 @@ const Form = (props) => {
     <form>
       <div>
         <label htmlFor="firstname">First name</label>
-        <input type="text" id="firstname" on />
+        <input
+          type="text"
+          name="firstname"
+          id="firstname"
+          required
+          onChange={props.change}
+        />
       </div>
       <div>
         <label htmlFor="lastname">Last name </label>
-        <input type="text" id="lastname" />
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          required
+          onChange={props.change}
+        />
       </div>
       <div>
-        <label htmlFor="phonenumber">Phone number</label>
-        <input type="tel" id="phonenumber" />
+        <label htmlFor="phone">Phone number</label>
+        <input type="tel" name="phone" id="phone" onChange={props.change} />
       </div>
       <div>
         <label htmlFor="message">Message</label>
-        <textarea id="message"></textarea>
+        <textarea name="message" id="message" onChange={props.change} />
       </div>
       <div>
         <label htmlFor="role">Role</label>
-        <select id="role">
+        <select name="role" id="role" onChange={props.change} required>
+          <option>Select...</option>
           <option value="Teacher">Teacher</option>
           <option value="Student">Student</option>
-          <option value="Student">Other</option>
+          <option value="Other">Other</option>
         </select>
       </div>
-      <button>SEND</button>
+      <button onClick={props.submit}>SEND</button>
     </form>
   );
 };

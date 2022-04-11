@@ -5,25 +5,34 @@ import Popup from "./Popup";
 
 class App extends Component {
   state = {
-    firstname: "",
-    lastname: "",
-    phonenumber: "",
-    role: "",
-    message: "",
+    inputData: {
+      firstname: "",
+      lastname: "",
+      phone: "",
+      role: "",
+      message: "",
+    },
+    showPopup: false,
   };
 
-  changeHandler = (event) => {
+  inputHandler = (e) => {
     this.setState({
-      [event.target.id]: event.target.value,
+      inputData: { ...this.state.inputData, [e.target.name]: e.target.value },
     });
+  };
+
+  popupHandler = () => {
+    this.setState({ showPopup: !this.state.showPopup });
   };
 
   render() {
     return (
       <main>
-        <Form />
-        <View />
-        <Popup />
+        <Form change={this.inputHandler} submit={this.popupHandler} />
+        <View {...this.state.inputData} />
+        {this.state.showPopup && (
+          <Popup {...this.state.inputData} submit={this.popupHandler} />
+        )}
       </main>
     );
   }
